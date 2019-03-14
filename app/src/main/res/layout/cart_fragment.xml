@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/backgroundGray"
+    android:clickable="true">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cart_fragment_price_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        android:background="@android:color/white">
+
+        <TextView
+            android:id="@+id/cart_fragment_total_price_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="جمع کل خرید"
+            app:layout_constraintRight_toRightOf="parent"
+            android:padding="5dp"/>
+
+        <TextView
+            android:id="@+id/cart_fragment_total_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 تومان"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:padding="5dp"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/cart_fragment_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="سبد خرید شما خالی است!"
+        app:layout_constraintBottom_toTopOf="@id/cart_fragment_btn"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_margin="5dp"/>
+
+    <Button
+        android:id="@+id/cart_fragment_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="پیگیری سفارشات"
+        android:backgroundTint="@color/light_blue"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/cart_fragment_recycle"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/cart_fragment_price_layout"
+        app:layout_constraintBottom_toTopOf="@id/cart_fragment_finalize_layout"
+        android:elevation="5dp"
+        android:layout_margin="5dp"/>
+
+    <FrameLayout
+        android:id="@+id/cart_fragment_full_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="15dp"/>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/green"
+        android:elevation="10dp"
+        android:id="@+id/cart_fragment_finalize_layout"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/cart_fragment_finalize_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="خرید خود را نهایی کنید"
+            android:padding="15dp"
+            android:textColor="@android:color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cart_fragment_finalize_img"
+            android:src="@drawable/ic_keyboard_arrow_left_white_24dp"
+            app:layout_constraintTop_toTopOf="@id/cart_fragment_finalize_txt"
+            app:layout_constraintBottom_toBottomOf="@id/cart_fragment_finalize_txt"
+            app:layout_constraintRight_toLeftOf="@id/cart_fragment_finalize_txt"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>

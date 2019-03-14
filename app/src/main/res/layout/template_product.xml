@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/template_product_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/white"
+    android:layout_margin="5dp"
+    android:elevation="5dp">
+
+    <LinearLayout
+        android:id="@+id/linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_weight="60"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/template_product_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="موبایل Apple Iphone XS 64GB"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_margin="5dp"/>
+
+            <ImageView
+                android:id="@+id/template_product_virtual"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_cloud_done_blue_24dp"
+                app:layout_constraintBottom_toTopOf="@id/template_product_line"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_margin="3dp"/>
+            <View
+                android:id="@+id/template_product_line"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"
+                app:layout_constraintTop_toBottomOf="@id/template_product_name"
+                app:layout_constraintBottom_toTopOf="@id/template_product_price"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_margin="5dp"/>
+
+            <TextView
+                android:id="@+id/template_product_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="25.000 تومان"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_margin="5dp"/>
+
+        </android.support.constraint.ConstraintLayout>
+
+
+        <ImageView
+            android:id="@+id/template_product_image"
+            android:layout_width="0dp"
+            android:layout_weight="40"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"/>
+    </LinearLayout>
+
+
+
+</android.support.constraint.ConstraintLayout>

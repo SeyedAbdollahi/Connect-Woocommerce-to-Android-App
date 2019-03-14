@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ارسال نظر"
+                android:layout_gravity="center"
+                android:textSize="20sp"
+                android:layout_margin="5dp"/>
+
+            <TextView
+                android:id="@+id/send_comment_dialog_name_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="نام"
+                android:layout_gravity="right"
+                android:padding="7dp"/>
+
+            <EditText
+                android:id="@+id/send_comment_dialog_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:maxLines="1"/>
+
+            <TextView
+                android:id="@+id/send_comment_dialog_email_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ایمیل"
+                android:layout_gravity="right"
+                android:padding="7dp"/>
+
+            <EditText
+                android:id="@+id/send_comment_dialog_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:maxLines="1"/>
+
+            <TextView
+                android:id="@+id/send_comment_dialog_review_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="نظر"
+                android:layout_gravity="right"
+                android:padding="7dp"/>
+
+            <EditText
+                android:id="@+id/send_comment_dialog_review"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:maxLines="6"/>
+
+            <TextView
+                android:id="@+id/send_comment_dialog_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ابتدا اییمل را وارد کنید"
+                android:layout_gravity="center"
+                android:visibility="invisible"/>
+
+            <Button
+                android:id="@+id/send_comment_dialog_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ارسال"
+                android:backgroundTint="@color/light_blue"
+                android:textColor="@android:color/white"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"/>
+        </LinearLayout>
+    </ScrollView>
+
+
+</android.support.constraint.ConstraintLayout>

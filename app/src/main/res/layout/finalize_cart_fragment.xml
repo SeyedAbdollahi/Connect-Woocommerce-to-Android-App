@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/backgroundGray"
+    android:clickable="true">
+
+    <ProgressBar
+        android:id="@+id/finalize_fragment_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:elevation="15dp"
+        android:visibility="invisible"/>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/finalize_complete_layout"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.widget.LinearLayout
+                android:id="@+id/finalize_personal_profile_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:orientation="vertical"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_margin="10dp"
+                android:elevation="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="مشخصات فردی"
+                    android:layout_gravity="center"
+                    android:padding="5dp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/finalize_fragment_first_name_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="نام"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="5dp"/>
+
+                <EditText
+                    android:id="@+id/finalize_fragment_first_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="first name"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"/>
+
+                <TextView
+                    android:id="@+id/finalize_fragment_last_name_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="نام خانوادگی"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="5dp"/>
+
+                <EditText
+                    android:id="@+id/finalize_fragment_last_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="last name"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"/>
+
+                <TextView
+                    android:id="@+id/finalize_fragment_phone_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="شماره تماس"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="5dp"/>
+
+                <EditText
+                    android:id="@+id/finalize_fragment_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="phone"
+                    android:text="phone number"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"/>
+            </android.widget.LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/finalize_send_address_layout"
+                android:orientation="vertical"
+                android:background="@android:color/white"
+                app:layout_constraintTop_toBottomOf="@id/finalize_personal_profile_layout"
+                android:layout_margin="10dp"
+                android:elevation="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="آدرس ارسال"
+                    android:layout_gravity="center"
+                    android:textStyle="bold"
+                    android:padding="5dp"/>
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:layout_margin="5dp">
+
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/finalize_fragment_add_location_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintRight_toRightOf="parent">
+
+                        <ImageView
+                            android:id="@+id/finalize_fragment_add_location_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_add_location_black_24dp"
+                            app:layout_constraintRight_toRightOf="parent"
+                            android:padding="5dp"/>
+
+                        <TextView
+                            android:id="@+id/finalize_fragment_add_location_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="افزودن آدرس"
+                            app:layout_constraintRight_toLeftOf="@id/finalize_fragment_add_location_img"
+                            app:layout_constraintTop_toTopOf="@id/finalize_fragment_add_location_img"
+                            app:layout_constraintBottom_toBottomOf="@id/finalize_fragment_add_location_img"/>
+
+                    </android.support.constraint.ConstraintLayout>
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/finalize_fragment_location_recycle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/finalize_fragment_add_location_layout"/>
+                </android.support.constraint.ConstraintLayout>
+            </LinearLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/finalize_virtual_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:layout_margin="10dp"
+                android:elevation="5dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="برای سفارشات مجازی نیازی به وارد کردن آدرس ارسال نیست. سفارش پس از تکمیل به ایمیل شما ارسال خواهد شد."
+                    app:layout_constraintRight_toLeftOf="@id/finalize_virtual_img"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:padding="5dp"/>
+
+                <ImageView
+                    android:id="@+id/finalize_virtual_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_cloud_done_blue_24dp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:padding="5dp"/>
+            </android.support.constraint.ConstraintLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/green"
+        android:elevation="10dp"
+        android:id="@+id/finalize_complete_layout"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/finalize_complete_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="تکمیل خرید"
+            android:padding="15dp"
+            android:textColor="@android:color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/finalize_complete_img"
+            android:src="@drawable/ic_keyboard_arrow_left_white_24dp"
+            app:layout_constraintTop_toTopOf="@id/finalize_complete_txt"
+            app:layout_constraintBottom_toBottomOf="@id/finalize_complete_txt"
+            app:layout_constraintRight_toLeftOf="@id/finalize_complete_txt"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>
